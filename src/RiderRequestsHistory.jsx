@@ -41,7 +41,7 @@ function RiderRequestsHistory() {
       ) : (
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {requests.map(req => {
-            const isPending = req.status === 'pending';
+            const isPending = req.status === 'pending' || req.status === 'accepted';
             const liStyle = {
               border: '1px solid #ccc',
               borderRadius: 8,
