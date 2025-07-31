@@ -15,7 +15,7 @@ function RiderRequestsHistory() {
       setLoading(true);
       setError('');
       try {
-        const res = await fetch('http://localhost:5050/api/requests/mine', {
+        const res = await fetch('https://bike-repair-app-backend.onrender.com/api/requests/mine', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();

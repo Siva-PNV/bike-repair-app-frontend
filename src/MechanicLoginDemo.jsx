@@ -22,7 +22,7 @@ function MechanicLoginDemo() {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch('http://localhost:5050/api/auth/login', {
+      const res = await fetch('https://bike-repair-app-backend.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -90,7 +90,7 @@ function MechanicLoginDemo() {
       try {
         // Fetch mechanic profile to get location
         setProfileWarning('');
-        const mechRes = await fetch(`http://localhost:5050/api/mechanics/${mechanicId}`, {
+        const mechRes = await fetch(`https://bike-repair-app-backend.onrender.com/api/mechanics/${mechanicId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (mechRes.ok) {
@@ -101,7 +101,7 @@ function MechanicLoginDemo() {
         } else {
           setProfileWarning('Warning: Mechanic profile not found. Distance calculation may be unavailable.');
         }
-        const res = await fetch('http://localhost:5050/api/requests/mechanic', {
+        const res = await fetch('https://bike-repair-app-backend.onrender.com/api/requests/mechanic', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();
@@ -116,7 +116,7 @@ function MechanicLoginDemo() {
 
   const updateRequestStatus = async (id, status) => {
     try {
-      const res = await fetch(`http://localhost:5050/api/requests/${id}/status`, {
+      const res = await fetch(`https://bike-repair-app-backend.onrender.com/api/requests/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ function MechanicLoginDemo() {
       if (res.ok) {
         // Refetch requests after status update
         if (mechanicId && token) {
-          const res = await fetch('http://localhost:5050/api/requests/mechanic', {
+          const res = await fetch('https://bike-repair-app-backend.onrender.com/api/requests/mechanic', {
             headers: { Authorization: `Bearer ${token}` }
           });
           const data = await res.json();

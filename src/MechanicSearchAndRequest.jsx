@@ -22,7 +22,7 @@ function MechanicSearchAndRequest({ token }) {
     setMechanics([]);
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5050/api/mechanics/nearby?lat=${lat}&lng=${lng}&radius=5000` , {
+      const res = await fetch(`https://bike-repair-app-backend.onrender.com/api/mechanics/nearby?lat=${lat}&lng=${lng}&radius=5000` , {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -39,7 +39,7 @@ function MechanicSearchAndRequest({ token }) {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('http://localhost:5050/api/requests', {
+      const res = await fetch('https://bike-repair-app-backend.onrender.com/api/requests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

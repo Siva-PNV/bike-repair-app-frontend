@@ -29,7 +29,7 @@ export default function RiderLoginRegisterDemo({ onLogin }) {
     e.preventDefault();
     setError('');
     try {
-      const url = isRegister ? 'http://localhost:5050/api/auth/register' : 'http://localhost:5050/api/auth/login';
+      const url = isRegister ? 'https://bike-repair-app-backend.onrender.com/api/auth/register' : 'https://bike-repair-app-backend.onrender.com/api/auth/login';
       const body = isRegister
         ? { name: form.name, email: form.email, password: form.password, role: 'rider' }
         : { email: form.email, password: form.password };

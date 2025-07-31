@@ -8,7 +8,7 @@ export function useSocketNotifications(mechanicId, onNewRequest) {
   useEffect(() => {
     if (!mechanicId) return;
     // Connect to backend Socket.IO server
-    const socket = io('http://localhost:5050'); // Update if backend runs elsewhere
+    const socket = io('https://bike-repair-app-backend.onrender.com'); // Update if backend runs elsewhere
     socketRef.current = socket;
 
     // Join mechanic room

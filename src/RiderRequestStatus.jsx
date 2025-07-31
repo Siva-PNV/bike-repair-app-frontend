@@ -26,7 +26,7 @@ function RiderRequestStatus({ requestId, token }) {
     let interval;
     const fetchStatus = async () => {
       try {
-        const res = await fetch(`http://localhost:5050/api/requests/${reqId}`, {
+        const res = await fetch(`https://bike-repair-app-backend.onrender.com/api/requests/${reqId}`, {
           headers: { Authorization: `Bearer ${token}` },
           cache: 'no-store'
         });

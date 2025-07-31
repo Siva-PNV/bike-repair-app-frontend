@@ -24,7 +24,7 @@ export default function MechanicCompletedRequests() {
       setLoading(false);
       return;
     }
-    fetch('http://localhost:5050/api/requests/mechanic', {
+    fetch('https://bike-repair-app-backend.onrender.com/api/requests/mechanic', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
