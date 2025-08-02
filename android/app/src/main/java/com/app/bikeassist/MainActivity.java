@@ -1,4 +1,4 @@
-package com.bike.app;
+package com.app.bikeassist;
 
 import com.getcapacitor.BridgeActivity;
 
